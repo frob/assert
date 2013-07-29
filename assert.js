@@ -7,8 +7,9 @@
  */
 (function( window, undefined ) {
 
-  assert = function() {
-    console.log("hello");
+  var assert = function( outcome, description ) {
+    var status = (outcome) ? "[PASS] | " : "[FAIL] | ";
+    console.log(status + description);
   };
 
 // Expose assert to the global object
