@@ -1,0 +1,11 @@
+{
+  "name": "assert",
+  "version": "0.1.0",
+  "main": [
+    "assert.js"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {}
+}
