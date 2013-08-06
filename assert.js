@@ -10,6 +10,8 @@
   var assert = function( outcome, description ) {
     var status = (outcome) ? "[PASS] | " : "[FAIL] | ";
     console.log(status + description);
+
+    return 1;
   };
 
 // Expose assert to the global object
