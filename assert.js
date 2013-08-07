@@ -7,11 +7,22 @@
  */
 (function( window, undefined ) {
 
-  var assert = function( outcome, description ) {
-    var status = (outcome) ? "[PASS] | " : "[FAIL] | ";
-    console.log(status + description);
+  var assert = function( outcome, description, log) {
+    // set a default value for log parameter
+    a = typeof a !== 'undefined' ? a : true;
 
-    return 1;
+    var status = (outcome) ? "[PASS]" : "[FAIL]";
+
+    if(log) {
+      console.log(status + " | " description);
+    }
+
+    if(status == "[PASS]") {
+      return true;
+    }
+    else {
+      return false;
+    }
   };
 
 // Expose assert to the global object
