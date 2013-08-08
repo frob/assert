@@ -7,7 +7,7 @@
  */
 (function( window, undefined ) {
 
-  var assert = function( outcome, description, flag, customLog) {
+  var assert = function(outcome, description, flag, customLog) {
     // set a default value for parameters
     flag = typeof flag !== 'undefined' ? flag : 'CONSOLE';
     customLog = typeof customLog !== 'undefined' ? customLog : 'CONSOLE';
@@ -17,8 +17,13 @@
 
     var status = (outcome) ? "[PASS]" : "[FAIL]";
 
-    if(flag == 'CONSOLE') {
-      log(status + " | " + description);
+    switch(flag) {
+      case 'CONSOLE' :
+        log(status + " | " + description);
+        break;
+      case 'ALERT' :
+        alert(status + " | " + description);
+        break;
     }
 
     if(status == "[PASS]") {
