@@ -1,0 +1,25 @@
+{
+  "name": "assert-test",
+  "version": "0.3.0",
+  "description": "assert library - Simple Testing Library",
+  "keywords": [
+    "unit test",
+    "testing"
+  ],
+  "bugs": "https://github.com/frob/assert/issues",
+  "license": "GPLv2",
+  "author": {
+    "name": "Frank Anderson",
+    "email": "anderson.frankrobert@gmail.com",
+    "url": "http://www.frankrobertanderson.com"
+  },
+  "main": [
+    "./assert.js"
+  ],
+  "repository" :{
+  "type" : "git",
+  "url" : "http://github.com:frob/assert.git"
+  }
+
+
+}
