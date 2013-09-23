@@ -5,13 +5,13 @@
  *
  * Date: 2013-7-29
  */
-(function( window, undefined ) {
+(function( global, undefined ) {
 
   var assert = function(outcome, description, flag, customLog) {
     // set a default value for parameters
     flag = typeof flag !== 'undefined' ? flag : 'CONSOLE';
     customLog = typeof customLog !== 'undefined' ? customLog : 'CONSOLE';
-
+    console.log("Assert loaded");
     // Abstract out the console.log to allow for log extensibilty.
     var log = console.log;
 
@@ -35,11 +35,11 @@
   };
 
 // Expose assert to the global object
-window.assert = assert;
+  global.assert = assert;
 
 // Expose assert as an AMD module.
-if ( typeof define === "function" && define.amd ) {
-  define( "assert", [], function () { return assert; } );
-}
+  if ( typeof define === "function" && define.amd ) {
+    define( "assert", [], function () { return assert; } );
+  }
 
-})( window );
+})(typeof window == "undefined" ? global : window);
