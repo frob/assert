@@ -5,7 +5,7 @@
  *
  * Date: 2013-7-29
  */
-(function( global, undefined ) {
+(function( global, require, exports, module, undefined ) {
 
   var assert = function(outcome, description, flag, customLog) {
     // set a default value for parameters
@@ -34,12 +34,22 @@
     }
   };
 
-// Expose assert to the global object
-  global.assert = assert;
+  if(!global.global) {
+    // Expose assert to the global object
+    global.assert = assert;
+  }
+  else {
+    // export for nodejs
+    module.exports = assert;
+  }
 
 // Expose assert as an AMD module.
   if ( typeof define === "function" && define.amd ) {
     define( "assert", [], function () { return assert; } );
   }
 
-})(typeof window == "undefined" ? global : window);
+})(typeof window == "undefined" ? global : window,
+    typeof require == "undefined" ? [] : require,
+    typeof exports == "undefined" ? [] : exports,
+    typeof module == "undefined" ? [] : module
+  );
