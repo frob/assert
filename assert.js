@@ -11,8 +11,7 @@
     // set a default value for parameters
     flag = typeof flag !== 'undefined' ? flag : 'CONSOLE';
     customLog = typeof customLog !== 'undefined' ? customLog : 'CONSOLE';
-    console.log("Assert loaded");
-    // Abstract out the console.log to allow for log extensibilty.
+    // Abstract out the console.log to allow for log extensibility.
     var log = console.log;
 
     var status = (outcome) ? "[PASS]" : "[FAIL]";

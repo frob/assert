@@ -13,9 +13,7 @@
     "email": "anderson.frankrobert@gmail.com",
     "url": "http://www.frankrobertanderson.com"
   },
-  "main": [
-    "./assert.js"
-  ],
+  "main": "./assert.js",
   "repository" :{
   "type" : "git",
   "url" : "http://github.com:frob/assert.git"
